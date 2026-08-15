@@ -148,26 +148,30 @@ const MusicPlayer2 = () => {
 
   return (
 
-    <div className="fixed bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] md:w-[750px]">
+    <div className="fixed bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-50 w-[60%] sm:w-[90%] md:w-[450px]">
 
   <div
     className="
       w-full
-      min-h-[90px]
-      sm:min-h-[110px]
-      md:h-[130px]
+      h-[70px]
+      sm:h-[80px]
+      md:h-[90px]
+
       rounded-[35px]
-      sm:rounded-[50px]
-      md:rounded-[70px]
+      sm:rounded-[40px]
+      md:rounded-[45px]
+
       px-3
       sm:px-4
-      md:px-5
-      py-3
+      md:px-4
+
       flex
       items-center
-      gap-3
-      sm:gap-4
-      md:gap-5
+
+      gap-2
+      sm:gap-3
+      md:gap-3
+
       shadow-2xl
       backdrop-blur-xl
       bg-white/10
@@ -182,12 +186,12 @@ const MusicPlayer2 = () => {
       src={song.image}
       alt={song.title}
       className="
-        w-14
-        h-14
-        sm:w-20
-        sm:h-20
-        md:w-[100px]
-        md:h-[100px]
+        w-12
+        h-12
+        sm:w-14
+        sm:h-14
+        md:w-16
+        md:h-16
         rounded-full
         object-cover
         shadow-lg
@@ -199,19 +203,19 @@ const MusicPlayer2 = () => {
 
     <div className="flex-1 min-w-0">
 
-      <h2 className="text-white font-bold text-sm sm:text-base md:text-lg truncate">
+      <h2 className="text-white font-bold text-xs sm:text-sm md:text-base truncate">
         {song.title}
       </h2>
 
-      <p className="text-white/70 text-xs sm:text-sm mt-1 truncate">
+      <p className="text-white/70 text-[10px] sm:text-xs mt-0.5 truncate">
         {song.artist}
       </p>
 
       {/* Progress */}
 
-      <div className="flex items-center gap-1 sm:gap-2 mt-2 sm:mt-3 md:mt-4">
+      <div className="flex items-center gap-1 sm:gap-2 mt-1">
 
-        <span className="text-white/80 text-[9px] sm:text-xs">
+        <span className="text-white/80 text-[8px] sm:text-[10px]">
           {formatTime(currentTime)}
         </span>
 
@@ -230,7 +234,7 @@ const MusicPlayer2 = () => {
           "
         />
 
-        <span className="text-white/80 text-[9px] sm:text-xs">
+        <span className="text-white/80 text-[8px] sm:text-[10px]">
           {formatTime(duration)}
         </span>
 
@@ -240,7 +244,7 @@ const MusicPlayer2 = () => {
 
     {/* Controls */}
 
-    <div className="flex items-center gap-2 sm:gap-4 md:gap-6 pr-1 sm:pr-2 md:pr-3">
+    <div className="flex items-center gap-1.5 sm:gap-3 md:gap-4 pr-1">
 
       {/* Previous */}
 
@@ -248,7 +252,10 @@ const MusicPlayer2 = () => {
         onClick={handlePrevious}
         className="text-white/80 hover:text-white transition"
       >
-        <FaStepBackward size={12} className="sm:w-[14px] sm:h-[14px] md:w-[15px] md:h-[15px]" />
+        <FaStepBackward
+          size={11}
+          className="sm:w-[13px] sm:h-[13px] md:w-[14px] md:h-[14px]"
+        />
       </button>
 
       {/* Play Pause */}
@@ -256,12 +263,12 @@ const MusicPlayer2 = () => {
       <button
         onClick={handlePlayPause}
         className="
-          w-10
-          h-10
-          sm:w-12
-          sm:h-12
-          md:w-14
-          md:h-14
+          w-9
+          h-9
+          sm:w-10
+          sm:h-10
+          md:w-11
+          md:h-11
           rounded-full
           bg-white
           text-black
@@ -275,9 +282,9 @@ const MusicPlayer2 = () => {
         "
       >
         {isPlaying ? (
-          <FaPause size={14} className="sm:w-4 sm:h-4" />
+          <FaPause size={12} />
         ) : (
-          <FaPlay size={14} className="sm:w-4 sm:h-4 ml-1" />
+          <FaPlay size={12} className="ml-0.5" />
         )}
       </button>
 
@@ -287,7 +294,10 @@ const MusicPlayer2 = () => {
         onClick={handleNext}
         className="text-white/80 hover:text-white transition"
       >
-        <FaStepForward size={12} className="sm:w-[14px] sm:h-[14px] md:w-[15px] md:h-[15px]" />
+        <FaStepForward
+          size={11}
+          className="sm:w-[13px] sm:h-[13px] md:w-[14px] md:h-[14px]"
+        />
       </button>
 
     </div>
@@ -305,6 +315,164 @@ const MusicPlayer2 = () => {
   </div>
 
 </div>
+
+//     <div className="fixed bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-50 w-[60%] sm:w-[90%] md:w-[450px] sm: h-20">
+
+//   <div
+//     className="
+//       w-full
+//       min-h-[90px]
+//       sm:min-h-[110px]
+//       md:h-[130px]
+//       rounded-[35px]
+//       sm:rounded-[50px]
+//       md:rounded-[70px]
+//       px-3
+//       sm:px-4
+//       md:px-5
+//       py-3
+//       flex
+//       items-center
+//       gap-3
+//       sm:gap-4
+//       md:gap-5
+//       shadow-2xl
+//       backdrop-blur-xl
+//       bg-white/10
+//       border
+//       border-white/20
+//     "
+//   >
+
+//     {/* Album Image */}
+
+//     <img
+//       src={song.image}
+//       alt={song.title}
+//       className="
+//         w-14
+//         h-14
+//         sm:w-20
+//         sm:h-20
+//         md:w-[100px]
+//         md:h-[100px]
+//         rounded-full
+//         object-cover
+//         shadow-lg
+//         flex-shrink-0
+//       "
+//     />
+
+//     {/* Song Information */}
+
+//     <div className="flex-1 min-w-0">
+
+//       <h2 className="text-white font-bold text-sm sm:text-base md:text-lg truncate">
+//         {song.title}
+//       </h2>
+
+//       <p className="text-white/70 text-xs sm:text-sm mt-1 truncate">
+//         {song.artist}
+//       </p>
+
+//       {/* Progress */}
+
+//       <div className="flex items-center gap-1 sm:gap-2 mt-2 sm:mt-3 md:mt-4">
+
+//         <span className="text-white/80 text-[9px] sm:text-xs">
+//           {formatTime(currentTime)}
+//         </span>
+
+//         <input
+//           type="range"
+//           min="0"
+//           max={duration || 0}
+//           value={currentTime}
+//           onChange={handleProgress}
+//           className="
+//             flex-1
+//             h-1
+//             appearance-none
+//             cursor-pointer
+//             accent-white
+//           "
+//         />
+
+//         <span className="text-white/80 text-[9px] sm:text-xs">
+//           {formatTime(duration)}
+//         </span>
+
+//       </div>
+
+//     </div>
+
+//     {/* Controls */}
+
+//     <div className="flex items-center gap-2 sm:gap-4 md:gap-6 pr-1 sm:pr-2 md:pr-3">
+
+//       {/* Previous */}
+
+//       <button
+//         onClick={handlePrevious}
+//         className="text-white/80 hover:text-white transition"
+//       >
+//         <FaStepBackward size={12} className="sm:w-[14px] sm:h-[14px] md:w-[15px] md:h-[15px]" />
+//       </button>
+
+//       {/* Play Pause */}
+
+//       <button
+//         onClick={handlePlayPause}
+//         className="
+//           w-10
+//           h-10
+//           sm:w-12
+//           sm:h-12
+//           md:w-14
+//           md:h-14
+//           rounded-full
+//           bg-white
+//           text-black
+//           flex
+//           items-center
+//           justify-center
+//           hover:scale-105
+//           transition
+//           shadow-lg
+//           flex-shrink-0
+//         "
+//       >
+//         {isPlaying ? (
+//           <FaPause size={14} className="sm:w-4 sm:h-4" />
+//         ) : (
+//           <FaPlay size={14} className="sm:w-4 sm:h-4 ml-1" />
+//         )}
+//       </button>
+
+//       {/* Next */}
+
+//       <button
+//         onClick={handleNext}
+//         className="text-white/80 hover:text-white transition"
+//       >
+//         <FaStepForward size={12} className="sm:w-[14px] sm:h-[14px] md:w-[15px] md:h-[15px]" />
+//       </button>
+
+//     </div>
+
+//     {/* Audio */}
+
+//     <audio
+//       ref={audioRef}
+//       src={song.src}
+//       onTimeUpdate={handleTimeUpdate}
+//       onLoadedMetadata={handleLoadedMetadata}
+//       onEnded={handleEnded}
+//     />
+
+//   </div>
+
+// </div>
     // <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
 
     //   <div
